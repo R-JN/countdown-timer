@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            p{
+                text-align: center;
+                font-size: 60px;
+                margin-top: 0px;
+            }
+        </style>
+    </head>
+    <p id="countdown"></p>
+    <body>
+        <script>
+            const last_day = new Date("January 1, 2023 00:00:00");
+            var x = setInterval(function(){
+            const today = new Date();
+            let millisecs = last_day.getTime() - today.getTime();
+            let secs = millisecs/1000; 
+            let hrs_remaining = Math.floor(secs/(60*60));
+            let mins_remaining = Math.floor((secs%(60*60))/60);
+            let secs_remaining = Math.floor((secs%(60*60))%60);
+            let countdown_display = hrs_remaining+":"+mins_remaining+":"+secs_remaining;
+            document.getElementById("countdown").innerHTML = hrs_remaining+"hrs "+mins_remaining+"mins "+secs_remaining+"secs";
+            },1000);
+        </script>
+    </body>
+</html>
+
